@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=GoProBuddy
+Comment=Download, preview and control your GoPro
+Exec=goprobuddy
+Icon=goprobuddy
+Terminal=false
+Categories=AudioVideo;Video;Photography;

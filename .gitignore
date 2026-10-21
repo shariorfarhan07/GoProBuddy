@@ -1,0 +1,6 @@
+# Build output (releases are built by GitHub Actions)
+/GoProBuddy.exe
+/GoProBuddy
+/goprobuddy
+/dist/
+*.test

@@ -1,0 +1,74 @@
+name: Bug report
+description: Something doesn't work as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping! A **diagnostic log** makes most bugs quick to fix. Open **Activity**, click **Start diagnostic log**, reproduce the problem, then click **Open log folder** and attach the newest file below.
+        Please never paste your camera's Wi-Fi password.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What went wrong, and what did you expect instead?
+      placeholder: Download stops at about 40% on large videos. I expected the whole file to save.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Launch GoProBuddy
+        2. Connect over Bluetooth
+        3. Select GX010042.MP4 and click Download
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: GoProBuddy version
+      description: The first line of the log file, or the release you downloaded.
+      placeholder: 0.1.0-preview
+    validations:
+      required: true
+  - type: input
+    id: camera
+    attributes:
+      label: Camera model and firmware
+      description: On the camera, Preferences → About.
+      placeholder: HERO11 Black, v2.30
+    validations:
+      required: true
+  - type: dropdown
+    id: connection
+    attributes:
+      label: How did you connect?
+      options: [Bluetooth (Scan), USB-C, Wi-Fi by IP, Couldn't connect]
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Operating system
+      options: [Windows, macOS, Linux]
+    validations:
+      required: true
+  - type: input
+    id: osversion
+    attributes:
+      label: OS version
+      description: "Windows: run `winver`. macOS: Apple menu → About This Mac. Linux: distro and version."
+      placeholder: Windows 11 23H2 / macOS 15.1 / Ubuntu 24.04
+  - type: textarea
+    id: log
+    attributes:
+      label: Diagnostic log
+      description: Drag the .log file here. Look through it first if you want to; Wi-Fi passwords are never in it.
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots or anything else
