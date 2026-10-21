@@ -6,7 +6,7 @@
 
 ![Status: preview](https://img.shields.io/badge/status-preview-orange)
 ![Platforms: Windows | macOS | Linux](https://img.shields.io/badge/platforms-Windows%20%7C%20macOS%20%7C%20Linux-0078D6)
-[![Build](../../actions/workflows/build.yml/badge.svg)](../../actions/workflows/build.yml)
+[![Build](https://github.com/shariorfarhan07/GoProBuddy/actions/workflows/build.yml/badge.svg)](https://github.com/shariorfarhan07/GoProBuddy/actions/workflows/build.yml)
 ![Go](https://img.shields.io/badge/Go-1.27%2B-00ADD8)
 ![UI: Gio](https://img.shields.io/badge/UI-Gio-13BCF2)
 
@@ -251,5 +251,3 @@ docs/PROTOCOL.md                How the camera protocol works (Open GoPro + meas
 **Does GoProBuddy delete anything from my camera?** No. It only reads from the SD card.
 
 **Is this an official GoPro app?** No. GoProBuddy is an independent project and is not affiliated with or endorsed by GoPro, Inc. "GoPro" and "HERO" are trademarks of GoPro, Inc.
-#   G o P r o B u d d y  
- 
