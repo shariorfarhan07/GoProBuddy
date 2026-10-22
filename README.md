@@ -295,7 +295,7 @@ docs/PROTOCOL.md                How the camera protocol works (Open GoPro + meas
 **Is this an official GoPro app?** No. GoProBuddy is an independent project and is not affiliated with or endorsed by GoPro, Inc. "GoPro" and "HERO" are trademarks of GoPro, Inc.
 
 ## Contributing
-Contributions are welcome: bug reports, test results from cameras we haven't tried, fixes and new features. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to get started.
+Contributions are welcome: bug reports, test results from cameras we haven't tried, fixes and new features. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to get started, and please follow the [Code of Conduct](CODE_OF_CONDUCT.md). Found a security problem? Report it privately as described in [SECURITY.md](SECURITY.md).
 
 ## License
 GoProBuddy is open source under the [MIT License](LICENSE). You're free to use, copy, change and share it, as long as you keep the copyright notice.

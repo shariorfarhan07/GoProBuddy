@@ -1,0 +1,54 @@
+name: Camera compatibility report
+description: Tell us how GoProBuddy works with your camera and computer (no coding needed)
+labels: [camera-compat]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you! Every report, even "everything worked", helps other GoPro owners. Please don't include your camera's Wi-Fi password.
+  - type: input
+    id: camera
+    attributes:
+      label: Camera model and firmware
+      description: On the camera, Preferences → About.
+      placeholder: HERO11 Black, v2.30
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: GoProBuddy version
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Operating system
+      options: [Windows, macOS, Linux]
+    validations:
+      required: true
+  - type: input
+    id: osversion
+    attributes:
+      label: OS version
+      placeholder: Windows 11 23H2 / macOS 15.1 / Ubuntu 24.04
+  - type: checkboxes
+    id: worked
+    attributes:
+      label: What worked?
+      description: Tick everything you tried that worked.
+      options:
+        - label: Connect over Bluetooth (Find my camera)
+        - label: Connect by IP (already on the camera's Wi-Fi)
+        - label: Connect over USB-C
+        - label: Browse media (thumbnails load)
+        - label: Download files
+        - label: Live preview
+        - label: Webcam mode
+        - label: Camera settings
+  - type: textarea
+    id: problems
+    attributes:
+      label: Anything that didn't work?
+      description: What you tried and what happened. Attach a diagnostic log if you can (Activity → Start diagnostic log).
