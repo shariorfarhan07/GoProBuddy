@@ -9,6 +9,7 @@
 [![Build](https://github.com/shariorfarhan07/GoProBuddy/actions/workflows/build.yml/badge.svg)](https://github.com/shariorfarhan07/GoProBuddy/actions/workflows/build.yml)
 ![Go](https://img.shields.io/badge/Go-1.27%2B-00ADD8)
 ![UI: Gio](https://img.shields.io/badge/UI-Gio-13BCF2)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 ![GoProBuddy: camera media](docs/screenshots/media.png)
 
@@ -29,6 +30,8 @@
 - [Building from source](#building-from-source)
 - [Project layout](#project-layout)
 - [FAQ](#faq)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Why GoProBuddy?
 GoPro's own app is built for phones. On a PC you're left with card readers and USB file browsing. GoProBuddy uses GoPro's public [Open GoPro](https://gopro.github.io/OpenGoPro/) API, over Bluetooth and the camera's own Wi-Fi, so you can leave the SD card in the camera.
@@ -251,3 +254,11 @@ docs/PROTOCOL.md                How the camera protocol works (Open GoPro + meas
 **Does GoProBuddy delete anything from my camera?** No. It only reads from the SD card.
 
 **Is this an official GoPro app?** No. GoProBuddy is an independent project and is not affiliated with or endorsed by GoPro, Inc. "GoPro" and "HERO" are trademarks of GoPro, Inc.
+
+## Contributing
+Contributions are welcome: bug reports, test results from cameras we haven't tried, fixes and new features. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to get started.
+
+## License
+GoProBuddy is open source under the [MIT License](LICENSE). You're free to use, copy, change and share it, as long as you keep the copyright notice.
+
+It's built on [Gio](https://gioui.org) (MIT / Unlicense) and [TinyGo Bluetooth](https://github.com/tinygo-org/bluetooth) (BSD-3-Clause). Live preview and webcam viewing use [FFmpeg](https://ffmpeg.org), which you install separately and which has its own license.
