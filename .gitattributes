@@ -1,0 +1,5 @@
+*.zip binary
+*.tar.gz binary
+*.syso binary
+*.png binary
+*.ico binary

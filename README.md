@@ -112,7 +112,7 @@ Activity shows every step in plain language. **Start diagnostic log** writes a d
 You can also put the `ffmpeg` program next to GoProBuddy.
 
 ### Download
-Ready-made builds for every system are on the **[Releases page](https://github.com/shariorfarhan07/GoProBuddy/releases)**. GitHub Actions builds them from this repository's code, so they're the same code you can read here.
+Ready-made builds for every system are on the **[Releases page](https://github.com/shariorfarhan07/GoProBuddy/releases)**, and the same files are in the repository's **[downloads folder](downloads/)**. GitHub Actions builds them from this repository's code, so they're the same code you can read here.
 
 | System | Download | Install |
 |---|---|---|
@@ -279,6 +279,7 @@ internal/gopro/pair_*.go        One-time Bluetooth pairing (Windows: WinRT, Linu
 internal/gopro/wifi_*.go        Joins the camera's Wi-Fi (Windows: netsh, macOS: networksetup, Linux: nmcli)
 open_*.go                       Opens folders in Explorer / Finder / the Linux file manager
 internal/diag/diag.go           The optional diagnostic log
+downloads/                      Ready-made builds for every system, with SHA256SUMS.txt
 assets/                         Logo: logo.png (README), logo-mark.png (transparent mark), logo.ico (app icon)
 tools/winres/                   Packs logo.ico into rsrc_windows_*.syso (the Windows icon)
 packaging/                      macOS Info.plist, Linux .desktop file and installer
