@@ -24,6 +24,7 @@
 - [Why GoProBuddy?](#why-goprobuddy)
 - [Features](#features)
 - [Getting started](#getting-started)
+- [Connecting your camera](#connecting-your-camera)
 - [Camera support](#camera-support)
 - [Debugging](#debugging)
 - [Reporting a problem](#reporting-a-problem)
@@ -43,6 +44,8 @@ GoPro's own app is built for phones. On a PC you're left with card readers and U
 ## Features
 
 ### Connect your camera, three ways
+*Step-by-step instructions: [Connecting your camera](#connecting-your-camera).*
+
 ![Camera connection](docs/screenshots/connection.png)
 
 | Method | What happens |
@@ -108,25 +111,60 @@ Activity shows every step in plain language. **Start diagnostic log** writes a d
 
 You can also put the `ffmpeg` program next to GoProBuddy.
 
-### Install
-Download the file for your system from [Releases](../../releases):
+### Download
+Ready-made builds for every system are on the **[Releases page](https://github.com/shariorfarhan07/GoProBuddy/releases)**. GitHub Actions builds them from this repository's code, so they're the same code you can read here.
 
-| System | File | How to install |
+| System | Download | Install |
 |---|---|---|
-| **Windows** | `GoProBuddy-windows-amd64.zip` (`arm64` for Snapdragon PCs) | Unzip and run `GoProBuddy.exe`. If SmartScreen warns you, click *More info → Run anyway*. |
-| **macOS** | `GoProBuddy-macos.zip` (one app for Intel and Apple Silicon) | Unzip and drag **GoProBuddy** to *Applications*. The first time, **right-click → Open**, because the app isn't notarized yet. Allow Bluetooth when macOS asks. |
-| **Linux** | `GoProBuddy-linux-amd64.tar.gz` (`arm64` for ARM) | `tar xzf GoProBuddy-linux-*.tar.gz && ./GoProBuddy-linux-*/install.sh`, then start GoProBuddy from your app menu. |
-
-Or [build it yourself](#building-from-source).
-
-### First run
-1. Start GoProBuddy.
-2. Turn on your GoPro. **The first time only**, put it in pairing mode: *Preferences → Wireless Connections → Connect Device*.
-3. Click **Find my camera**, then **Connect** next to your camera. GoProBuddy pairs, switches on the camera's Wi-Fi and joins it.
-4. Open **Camera media**, select files and click **Download**.
+| **Windows 10/11** (most PCs) | `GoProBuddy-windows-amd64.zip` | Unzip and run `GoProBuddy.exe`. No installer needed. If SmartScreen warns you, click *More info → Run anyway* (the app isn't code-signed yet). |
+| **Windows on ARM** (Snapdragon) | `GoProBuddy-windows-arm64.zip` | Same as above. |
+| **macOS 11+** (Intel and Apple Silicon) | `GoProBuddy-macos.zip` | Unzip and drag **GoProBuddy.app** to *Applications*. The first time, **right-click → Open**, because the app isn't notarized yet. Allow Bluetooth when macOS asks. |
+| **Linux** (x86-64) | `GoProBuddy-linux-amd64.tar.gz` | `tar xzf GoProBuddy-linux-amd64.tar.gz && ./GoProBuddy-linux-amd64/install.sh`, then start GoProBuddy from your app menu. |
+| **Linux** (ARM64) | `GoProBuddy-linux-arm64.tar.gz` | Same, with `arm64` in the names. |
 
 > [!NOTE]
-> While your computer is on the camera's Wi-Fi it has **no internet over Wi-Fi**. That's how GoPro's Wi-Fi works. Use Ethernet or USB-C if you need both at once.
+> Windows is tested with a real camera. The macOS and Linux builds compile and package on GitHub, but haven't been tried on real hardware yet. Please [tell us](https://github.com/shariorfarhan07/GoProBuddy/issues/new/choose) how they work for you.
+
+Prefer to compile it yourself? See [Building from source](#building-from-source).
+
+## Connecting your camera
+GoProBuddy can reach your GoPro three ways. **Bluetooth is the easiest**: it does everything for you. You only need one of them.
+
+### Option 1: Bluetooth (recommended)
+GoProBuddy finds the camera over Bluetooth, tells it to switch on its Wi-Fi, reads the Wi-Fi name and password, and joins it, all automatically.
+
+1. Make sure Bluetooth and Wi-Fi are on on your computer.
+2. Turn on your GoPro and keep it within about 1 m of the computer.
+3. **First time only:** put the camera in pairing mode: *Preferences → Connections → Connect Device* (called *Wireless Connections* on some models), then choose the GoPro app option.
+4. In GoProBuddy, click **Find my camera**. Your camera appears in the list after a few seconds (named like `GoPro 1234`).
+5. Click **Connect** next to it. Watch the steps under **Activity**: pairing, switching on the camera's Wi-Fi, joining it, and connecting.
+6. When the sidebar says **Camera connected**, open **Camera media**.
+
+After the first time, Windows, macOS and Linux remember the pairing, so you can skip step 3.
+
+### Option 2: Already on the camera's Wi-Fi
+Use this if Bluetooth isn't available, or the automatic Wi-Fi join didn't work.
+
+1. On the camera, find its Wi-Fi name and password: *Preferences → Connections → Camera Info* (the exact menu name varies by model). If the automatic join failed, GoProBuddy also shows them under **Activity**.
+2. Join that Wi-Fi network from your computer's Wi-Fi menu, like any other network.
+3. In GoProBuddy, open **Camera connection**. Under *Already on camera Wi-Fi?*, leave the address as `10.5.5.9` and click **Connect**.
+
+### Option 3: USB-C cable
+A cable gives the steadiest connection, and your computer keeps its internet over Wi-Fi. It's the best choice for webcam mode.
+
+1. On the camera, set *Preferences → Connections → USB Connection* to **GoPro Connect** (not MTP).
+2. Plug the camera into your computer with a USB-C data cable.
+3. In GoProBuddy, open **Camera connection** and click **Connect over USB**. It finds the camera's address automatically.
+
+### Good to know
+- **No internet over Wi-Fi while connected.** When your computer joins the camera's Wi-Fi (options 1 and 2), it can't use your home Wi-Fi at the same time. That's how GoPro's Wi-Fi works. Ethernet or a USB-C connection avoids this.
+- **The camera stays awake** while GoProBuddy is connected; it keeps it from going to sleep.
+- **Something not working?** Open **Activity**: every step is listed there in plain language. For a bug report, click **Start diagnostic log** first (see [Debugging](#debugging)).
+
+### First download
+1. Open **Camera media**. Your photos and videos load as thumbnails, grouped by day.
+2. Click the clips you want, or leave nothing selected to get everything not yet on your computer.
+3. Click **Download**. Files are saved to `Videos\GoPro` (change it in the **Save to** box at the bottom).
 
 ## Camera support
 GoProBuddy uses GoPro's documented HTTP API (with a fallback for older cameras), so most cameras from HERO9 onward should work.
